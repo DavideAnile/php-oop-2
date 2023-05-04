@@ -16,7 +16,7 @@ $dogProducts = [
     $dogBall,
     $doghouse,
     $dogfood2,
-    $dogfood2,
+    $doghouse2,
 
 ];
 
@@ -57,88 +57,151 @@ $catProducts = [
 
 
 <h1>E-commerce</h1>
-<hr>
-
-<h3>Prodotti per cani</h3>
 
 
-<div class="dog-cards-container">
+<main>
 
+<section class="first-section">
 
-
-<?php 
-
-foreach($dogProducts as $singleProduct){
-
-    ?>
-
-
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4 img-container">
-      <img src="<?= $singleProduct->image ?>" class="card-img" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"><?= $singleProduct->name ?></h5>
-        <p class="card-text"><?= $singleProduct->description ?></p>
-        <p class="card-text"><small class="text-muted">Prezzo : <span class="fw-bold"><?= $singleProduct->getEuro() ?></span> </small></p>
-        <p class="card-text"><small class="text-muted">Categoria : <?= $singleProduct->category ?> </small></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-    <?php
-
-
-}
-
-?>
+    <h2>Prodotti per cani</h2>
     
-</div>
-
-
-<hr>
-
-<h3>Prodotti per gatti</h3>
-
-
-<div class="cat-cards-container">
-
-
-
-<?php
-
-foreach($catProducts as $singleCatProduct){
-
-
-    ?>
-
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4 img-container">
-      <img src="<?= $singleCatProduct->image ?>" class="card-img" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"><?= $singleCatProduct->name ?></h5>
-        <p class="card-text"><?= $singleCatProduct->description ?></p>
-        <p class="card-text"><small class="text-muted">Prezzo : <span class="fw-bold"><?= $singleCatProduct->getEuro() ?></span></small></p>
-        <p class="card-text"><small class="text-muted">Categoria : <?= $singleCatProduct->category ?></small></p>
+    
+    <div class="dog-cards-container">
+    
+    
+    
+    <?php 
+    
+    foreach($dogProducts as $singleProduct){
+    
+        
+        ?>
+    
+    
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4 img-container">
+          <img src="<?= $singleProduct->image ?>" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><?= $singleProduct->name ?></h5><hr>
+            <p class="card-text"><?= $singleProduct->description ?></p><hr>
+            <p class="card-text"><small class="text-muted">Prezzo : <span class="fw-bold"><?= $singleProduct->getEuro() ?></span> </small></p><hr>
+            <p class="card-text  "><small class="text-muted">Categoria : <?= $singleProduct->category ?> </small></p><hr>
+    
+            <?php 
+            if(property_exists($singleProduct, 'dimension')){
+                echo '<p class="card-text"><small class="text-muted">Dimensioni : ' . $singleProduct->dimension .' </small></p><hr>';
+            } 
+    
+            if(property_exists($singleProduct, 'material')){
+                echo '<p class="card-text"><small class="text-muted">Materiale : ' . $singleProduct->material .' </small></p>';
+            } 
+    
+            if(property_exists($singleProduct, 'expirationDate')){
+                echo '<p class="card-text"><small class="text-muted">Data di Scadenza : ' . $singleProduct->expirationDate .' </small></p><hr>';
+            } 
+            
+            if(property_exists($singleProduct, 'quantity')){
+                echo '<p class="card-text"><small class="text-muted">Quantità : ' . $singleProduct->quantity .' </small></p>';
+            } 
+    
+            if(property_exists($singleProduct, 'type')){
+                echo '<p class="card-text"><small class="text-muted">Tipo di gioco : ' . $singleProduct->type.' </small></p>';
+            } 
+    
+            ?>
+            
+            
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+    
+    
+        <?php
+    
+    
+    }
+    
+    ?>
+        
+    </div>
+</section>
 
+    
+    
+  
 
+<section class="second-section">
+
+    <h2>Prodotti per gatti</h2>
+    
+    
+    <div class="cat-cards-container">
+    
+    
+    
     <?php
-}
+    
+    foreach($catProducts as $singleCatProduct){
+    
+    
+        ?>
+    
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4 img-container">
+          <img src="<?= $singleCatProduct->image ?>" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8 info-container">
+          <div class="card-body">
+            <h5 class="card-title"><?= $singleCatProduct->name ?></h5><hr>
+            <p class="card-text"><?= $singleCatProduct->description ?></p><hr>
+            <p class="card-text"><small class="text-muted">Prezzo : <span class="fw-bold"><?= $singleCatProduct->getEuro() ?></span></small></p><hr>
+            <p class="card-text"><small class="text-muted">Categoria : <?= $singleCatProduct->category ?></small></p><hr>
+    
+            <?php 
+            if(property_exists($singleCatProduct, 'dimension')){
+                echo '<p class="card-text"><small class="text-muted">Dimensioni : ' . $singleCatProduct->dimension .' </small></p><hr>';
+            } 
+    
+            if(property_exists($singleCatProduct, 'material')){
+                echo '<p class="card-text"><small class="text-muted">Materiale : ' . $singleCatProduct->material .' </small></p>';
+            } 
+    
+            if(property_exists($singleCatProduct, 'expirationDate')){
+                echo '<p class="card-text"><small class="text-muted">Data di Scadenza : ' . $singleCatProduct->expirationDate .' </small></p><hr>';
+            } 
+            
+            if(property_exists($singleCatProduct, 'quantity')){
+                echo '<p class="card-text"><small class="text-muted">Quantità : ' . $singleCatProduct->quantity .' </small></p>';
+            } 
+    
+            if(property_exists($singleCatProduct, 'type')){
+                echo '<p class="card-text"><small class="text-muted">Tipo di gioco : ' . $singleCatProduct->type.' </small></p>';
+            } 
+    
+            ?>
+    
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+        <?php
+    }
+    
+    ?>
+    
+    </div>
+</section>    
+    
 
-?>
+</main>
 
-</div>
 
 
 

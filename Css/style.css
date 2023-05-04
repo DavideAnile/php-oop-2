@@ -1,13 +1,25 @@
 h1{
     text-align: center;
+    padding: 50px 0;
 }
 
-h3{
+h2{
     text-align: center;
     padding: 40px 0;
-    color: red
+    color: white;
+    text-transform: uppercase;
 }
 
+.first-section{
+    padding-bottom: 50px;
+    background-image: url("../img/dogsBG.jpg");
+}
+
+.second-section{
+    background-image: url("../img/catsBG.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 
 .dog-cards-container{
@@ -16,6 +28,8 @@ h3{
     justify-content: center;
     flex-flow: row wrap;
     gap: 40px;
+    
+    
     
 }
 
@@ -27,7 +41,15 @@ h3{
 }
 
 .card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 33%;
+    transition: 1s;
+}
+
+.card:hover{
+    transform: scale(1.1);
 }
 
 .img-container{
@@ -37,4 +59,11 @@ h3{
     padding: 20px;
     height: 100%;
     
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
 }

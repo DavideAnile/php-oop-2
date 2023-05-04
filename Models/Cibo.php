@@ -9,6 +9,7 @@ class Cibo extends Product {
         parent::__construct($name , $price , $description , $category , $image , $expirationDate);
 
         $this->expirationDate = $expirationDate;
+        $this->quantity = $quantity;
     
         
     }
