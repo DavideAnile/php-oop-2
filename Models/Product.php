@@ -18,6 +18,10 @@ class Product {
         $this->image = $image;
 
     }
+
+    function getEuro(){
+        return $this->price . " &euro;" ;
+    }
     
         
     
