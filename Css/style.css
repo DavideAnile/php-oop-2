@@ -1,0 +1,11 @@
+
+.dog-card-container{
+    
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.card{
+    width: 33%;
+}
