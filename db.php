@@ -1,5 +1,9 @@
 <?php 
 
+require_once __DIR__ . '/Traits/Votable.php';
+
+
+
 $category = ['<i class="fa-solid fa-dog"></i>' , '<i class="fa-solid fa-cat"></i>'];
 
 
@@ -19,6 +23,24 @@ $dogfood2 = new Cibo('Virtus Dog Protein Selection Patè Lattina', 2 , 'Virtus D
 $doghouse2 = new Cuccia('Cuccia Poker Indi', 34 , 'Cuccia Poker Indi rettangolare morbida Indi realizzata per il 70% in cotone e per il 30% in poliestere, con interno in ovatta di poliestere siliconato.', $category[0], './img/doghouse2.webp', 'COTTON' , '53 X 53 X 23CM.');
 
 
+try {
 
+    $crocchette->setVote(5);
+    $kittenMice->setVote(3);
+    $cucciaIglò->setVote(4);
+    $aromaDog->setVote(2);
+    $croccantini->setVote(4);
+    $beapher->setVote(5);
+    $catpool->setVote(4);
+    $dogBall->setVote(5);
+    $catfood->setVote(5);
+    $doghouse->setVote(3);
+    $dogfood2->setVote(4);
+    $doghouse2->setVote(5);
+
+} catch (Exception $e){
+    
+    echo $e->getMessage();
+}
 
 ?>

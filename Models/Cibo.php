@@ -1,6 +1,12 @@
 <?php 
 
+require_once __DIR__ . '/../Traits/Votable.php';
+
+
 class Cibo extends Product {
+
+    use Votable;
+
     public $expirationDate;
     public $quantity;
 

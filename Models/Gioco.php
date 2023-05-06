@@ -1,6 +1,10 @@
 <?php 
 
+require_once __DIR__ . '/../Traits/Votable.php';
+
 class Gioco extends Product {
+
+    use Votable;
 
     public $type ; 
 

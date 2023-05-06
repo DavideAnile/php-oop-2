@@ -1,6 +1,10 @@
 <?php 
 
+require_once __DIR__ . '/../Traits/Votable.php';
+
 class Cuccia extends Product{
+
+    use Votable;
 
     public $material;
     public $dimension;

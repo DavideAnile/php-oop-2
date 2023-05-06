@@ -89,6 +89,8 @@ $catProducts = [
             <p class="card-text"><?= $singleProduct->description ?></p><hr>
             <p class="card-text"><small class="text-muted">Prezzo : <span class="fw-bold"><?= $singleProduct->getEuro() ?></span> </small></p><hr>
             <p class="card-text  "><small class="text-muted">Categoria : <?= $singleProduct->category ?> </small></p><hr>
+            <p class="card-text  "><small class="text-muted">Voto : <?= $singleProduct->getVote() ?> </small></p><hr>
+            
     
             <?php 
             if(property_exists($singleProduct, 'dimension')){
@@ -161,6 +163,7 @@ $catProducts = [
             <p class="card-text"><?= $singleCatProduct->description ?></p><hr>
             <p class="card-text"><small class="text-muted">Prezzo : <span class="fw-bold"><?= $singleCatProduct->getEuro() ?></span></small></p><hr>
             <p class="card-text"><small class="text-muted">Categoria : <?= $singleCatProduct->category ?></small></p><hr>
+            <p class="card-text  "><small class="text-muted">Voto : <?= $singleCatProduct->getVote() ?> </small></p><hr>
     
             <?php 
             if(property_exists($singleCatProduct, 'dimension')){
